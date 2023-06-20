@@ -1,18 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
     tools:context=".MainActivity">
 
+    <!-- Distância -->
+    <EditText
+        android:id="@+id/edit_distance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="32dp"
+        android:hint="@string/distance"/>
+
+    <!-- Total de Quilômetros -->
+    <!-- Não tem muito sentido colocar um id nesse text view, pois ele não será manipulado -->
     <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/total_km"
+        android:layout_marginTop="4dp"
+        android:gravity="center"/>
+
+    <!-- Preço -->
+    <EditText
+        android:id="@+id/edit_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="32dp"
+        android:layout_marginTop="16dp"
+        android:hint="@string/price"/>
+
+    <!-- Preço por litro -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/price_per_liter"
+        android:layout_marginTop="4dp"
+        android:gravity="center"/>
+
+    <!-- Autonomia -->
+    <EditText
+        android:id="@+id/edit_autonomy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:padding="32dp"
+        android:hint="@string/autonomy"/>
+
+    <!-- Preço por litro -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/kms_per_liter"
+        android:layout_marginTop="4dp"
+        android:gravity="center"/>
+
+    <!-- Gasto total será de -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/total_spend"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:textAllCaps="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="32dp"
+        android:padding="16dp"/>
+
+    <TextView
+        android:id="@+id/text_total_value"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="@string/total_value"
+        android:textSize="64sp"
+        android:textColor="@color/purple_700"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:padding="64dp"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:id="@+id/button_calculate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:textSize="20sp"
+        android:text="@string/calculate"
+        android:backgroundTint="@color/teal_700"/>
+
+</LinearLayout>
