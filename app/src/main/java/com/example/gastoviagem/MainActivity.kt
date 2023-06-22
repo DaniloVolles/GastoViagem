@@ -24,8 +24,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onClick(view: View) {
-        if (view.id == R.id.button_calculate) {
-            calculate()
+
+        when (view.id) {
+            R.id.button_calculate -> calculate()
+
         }
     }
 
