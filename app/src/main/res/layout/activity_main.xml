@@ -14,7 +14,8 @@
         android:id="@+id/edit_distance"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="32dp"
+        android:layout_marginTop="8dp"
+        android:inputType="number"
         android:hint="@string/distance"/>
 
     <!-- Total de Quilômetros -->
@@ -29,9 +30,9 @@
     <!-- Preço -->
     <EditText
         android:id="@+id/edit_price"
+        android:inputType="numberDecimal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="32dp"
         android:layout_marginTop="16dp"
         android:hint="@string/price"/>
 
@@ -46,10 +47,10 @@
     <!-- Autonomia -->
     <EditText
         android:id="@+id/edit_autonomy"
+        android:inputType="numberDecimal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:padding="32dp"
         android:hint="@string/autonomy"/>
 
     <!-- Preço por litro -->
