@@ -15,5 +15,7 @@
 
     <string name="calculate">Calcular</string>
 
+    <string name="validation_fill_all_fields">Preencha todos os campos.</string>
+
 
 </resources>

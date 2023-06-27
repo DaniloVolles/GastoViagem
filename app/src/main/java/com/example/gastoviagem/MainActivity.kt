@@ -33,18 +33,25 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     // ^^^^^^ Boa prática: Todas as funções override são escritas primeiro
 
+    private fun isValid(): Boolean {
+        return (binding.editDistance.text.toString() != ""
+                && binding.editPrice.text.toString() != ""
+                && binding.editAutonomy.text.toString() != ""
+                && binding.editAutonomy.text.toString().toFloat() != 0f)
+    }
+
     private fun calculate() {
 
-        // Text é uma propriedade do nosso textview, então temos que converter para string para podermos utilizar esses valores
-        val distance = binding.editDistance.text.toString().toFloat()
-        val price = binding.editPrice.text.toString().toFloat()
-        val autonomy = binding.editAutonomy.text.toString().toFloat()
+        if (isValid()) {
+            val distance = binding.editDistance.text.toString().toFloat()
+            val price = binding.editPrice.text.toString().toFloat()
+            val autonomy = binding.editAutonomy.text.toString().toFloat()
 
-        val totalValue = (distance * price) / autonomy
+            val totalValue = (distance * price) / autonomy
+            binding.textTotalValue.text = "R$ ${"%.2f".format(totalValue)}"
 
-        binding.textTotalValue.text = "R$ ${"%.2f".format(totalValue)}"
-
-        // Notificação para o usuário quando ele realiza uma ação
-        // Toast.makeText(this, totalValueStr, Toast.LENGTH_SHORT).show()
+        } else {
+            Toast.makeText(this, R.string.validation_fill_all_fields, Toast.LENGTH_SHORT).show()
+        }
     }
 }
